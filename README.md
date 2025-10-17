@@ -203,7 +203,7 @@ VPNL is credibly neutral infrastructure:
 🚧 Next milestone: Security audit + mainnet deployment
 
 ### Support This Project
-We’re raising $45k on Giveth for GG24 (Interop Standards, Infrastructure & Analytics):
+We’re raising funds on Giveth for GG24 (Interop Standards, Infrastructure & Analytics):
 
 Donate on Giveth → https://giveth.io/project/vpnl:-the-verifiable-performance-network-layer
 
