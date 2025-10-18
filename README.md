@@ -169,7 +169,7 @@ Solver → zkTLS Proof → VPNL Feeder Node → DIA Lasernet → Cross-Chain Del
 - ✅ Arbitrum mainnet deployment
 - ✅ Public subgraph (The Graph)
 - ✅ Production API with 99.9% uptime SLA
-- ✅ **DIA Lumina integration research** *(NEW)*
+- ✅ **DIA Lumina integration research** 
 - ✅ 2-3 pilot protocol integrations
 
 **Key Milestone:** Foundation secured, partnership established
@@ -436,9 +436,9 @@ Reputation infrastructure is too critical to be:
 
 ## Support This Project
 
-We're raising funds on **Giveth GG24 (Interop Standards, Infrastructure & Analytics)**:
+We're raising funds on **Giveth**:
 
-👉 [**Donate on Giveth →**](https://giveth.io/project/vpnl:-the-verifiable-performance-network-layer)
+👉 [**Donate**](https://giveth.io/project/vpnl:-the-verifiable-performance-network-layer)
 
 Every dollar builds open infrastructure that *any protocol* can use.
 
