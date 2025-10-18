@@ -188,7 +188,7 @@ This freed capital can:
 
 ### 3.3 Robustness Analysis
 
-Detailed sensitivity analysis and attack vector modeling are provided in the companion technical supplement: [VPNL Economic Proof v1.2](vpnl-economic-proof-v1.2.md).
+Detailed sensitivity analysis and attack vector modeling are provided in the companion technical supplement: [VPNL Economic Proof v1](economic-proof.md).
 
 -----
 
@@ -662,7 +662,7 @@ VPNL follows a three-phase governance evolution ensuring credible neutrality whi
 [14] Flashbots. “MEV-Boost Documentation.” 2023.  
 [15] Gitcoin Passport. “Decentralized Identity.” 2024.  
 [16] VPNL Network. “GitHub Repository.” 2025. https://github.com/vpnlnetwork/vpnl  
-[17] VPNL Network. “Economic Proof v1.2.” 2025.
+[17] VPNL Network. “Economic Proof v1” 2025.
 
 -----
 
@@ -692,7 +692,7 @@ VPNL follows a three-phase governance evolution ensuring credible neutrality whi
 
 ## Citation
 
-Johnson, M. (2025). *VPNL: The Verifiable Performance Network Layer* (v1.2). Zenodo. DOI: [To be assigned]
+Johnson, M. (2025). *VPNL: The Verifiable Performance Network Layer* (v1). Zenodo. DOI: [To be assigned]
 
 -----
 
