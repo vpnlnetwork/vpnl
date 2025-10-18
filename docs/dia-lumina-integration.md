@@ -1078,7 +1078,7 @@ Result: Not economically rational
 
 **VPNL:**
 - Telegram: https://t.me/vpnlnetwork
-- Twitter: @vpnlnetwork *(if available)*
+- Twitter: @vpnlnetwork 
 
 ### Development Tools
 
