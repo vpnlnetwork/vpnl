@@ -5,6 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Built for Ethereum](https://img.shields.io/badge/Built%20for-Ethereum-3C3C3D.svg)]()
 [![Public Goods](https://img.shields.io/badge/Public%20Goods-%F0%9F%8C%8D-green)]()
+[![DIA Lumina](https://img.shields.io/badge/Powered%20by-DIA%20Lumina-orange)]()
 
 ---
 
@@ -12,6 +13,8 @@
 
 **VPNL** provides open data schemas that enable **risk-adjusted routing** for intent-based protocols.  
 We're building **W3C Verifiable Credential standards** and **on-chain registry infrastructure** that let protocols verify solver performance without centralized gatekeepers.
+
+**Infrastructure Partner:** Integrating with [DIA Lumina](https://www.diadata.org/lumina/), the first fully on-chain oracle network, for trustless and decentralized reputation verification.
 
 ---
 
@@ -30,8 +33,9 @@ The Open Intents Framework (OIF) faces an impossible trilemma without reputation
 **VPNL** resolves this by providing:
 
 - 🧩 **Open Data Schema:** W3C Verifiable Credentials for portable solver reputation  
-- 🔗 **On-Chain Registry:** EAS attestations with cryptographic commitments (zero PII)  
+- 🔗 **On-Chain Registry:** Cryptographic commitments (zero PII) on Arbitrum and DIA Lasernet
 - ⚖️ **Risk-Adjusted Routing:** Protocols query reputation and adjust collateral dynamically  
+- 🌐 **Decentralized Verification:** Powered by DIA Lumina's permissionless oracle network
 
 **Example:**
 
@@ -78,11 +82,15 @@ The Open Intents Framework (OIF) faces an impossible trilemma without reputation
 └─────────────────────────────────────────────────┘
 ↓
 ┌─────────────────────────────────────────────────┐
-│   Layer 2: On-Chain Registry (Arbitrum)        │
-│   - Store commitment hash (zero PII)           │
-│   - Track verification timestamp               │
-│   - Manage active/revoked status               │
-│   - Emit events for indexing                   │
+│   Layer 2: On-Chain Registry                    │
+│   A) Arbitrum: VPNLRegistry.sol                │
+│      - Store commitment hash (zero PII)        │
+│      - Track verification status               │
+│                                                 │
+│   B) DIA Lasernet: Decentralized Oracle        │
+│      - Permissionless feeder nodes             │
+│      - Crypto-economic security (staking)      │
+│      - Cross-chain reputation delivery         │
 └─────────────────────────────────────────────────┘
 ↓
 ┌─────────────────────────────────────────────────┐
@@ -90,16 +98,51 @@ The Open Intents Framework (OIF) faces an impossible trilemma without reputation
 │   - Issue W3C Verifiable Credential             │
 │   - Solver stores in wallet                     │
 │   - Present to any protocol                     │
-│   - Optional: EAS attestation                   │
+│   - Query via DIA oracles (140+ chains)        │
 └─────────────────────────────────────────────────┘
 ```
 
 ---
 
+## Infrastructure Partnership: DIA Lumina
+
+VPNL is integrating with **[DIA Lumina](https://www.diadata.org/lumina/)**, the first fully on-chain oracle network, to achieve trustless reputation verification at scale.
+
+### Why DIA Lumina?
+
+- **🔓 Permissionless:** Anyone can run VPNL feeder nodes on Lasernet
+- **🔐 Crypto-Economic Security:** Staking + slashing replaces centralized trust
+- **🌐 Cross-Chain Native:** Reputation available on 140+ blockchains via DIA Spectra
+- **⚡ Battle-Tested:** DIA's oracle infrastructure is production-proven
+- **🔬 zkTLS Integration:** Cryptographic proof of exchange API data (Phase 2+)
+
+### Architecture Overview
+
+```
+Solver → zkTLS Proof → VPNL Feeder Node → DIA Lasernet → Cross-Chain Delivery
+                              ↓
+                    Crypto-Economic Security
+                    (Staked DIA tokens)
+```
+
+### Benefits Over Custom Infrastructure
+
+| Aspect | Custom Build | DIA Lumina Integration |
+|--------|--------------|------------------------|
+| Development Time | 6-9 months | 2-3 months |
+| Development Cost | $20k+ | ~$8k |
+| Security Model | Need to design/audit | Battle-tested |
+| Cross-chain | Per-chain integration | 140+ chains included |
+| Decentralization | Complex governance | Built-in (day 1) |
+
+**Read more:** [docs/dia-lumina-integration.md](docs/dia-lumina-integration.md)
+
+---
+
 ## Key Features
 
-- 🎯 **Purpose-Built for PnL Verification**  
-  Not generic reputation—specifically for trading performance calibration.
+- 🎯 **Purpose-Built for Performance Verification**  
+  Not generic reputation—specifically for trading performance and capital efficiency.
 
 - 🔓 **Open Standards**  
   W3C Verifiable Credentials + EAS attestations = transparent, auditable.
@@ -108,20 +151,65 @@ The Open Intents Framework (OIF) faces an impossible trilemma without reputation
   Zero PII on-chain, cryptographic commitments, and future ZK threshold proofs.
 
 - 🌐 **Protocol-Agnostic**  
-  One verification works across *all* OIF protocols.
+  One verification works across *all* OIF protocols and 140+ blockchains.
 
 - 🏛️ **Credibly Neutral**  
-  Progressive decentralization: Founder → Multisig → DAO.
+  Progressive decentralization via DIA Lumina's permissionless infrastructure.
 
 ---
 
 ## Roadmap
 
-| Phase | Timeline | Objective | Funding | Deliverables |
-|-------|----------|-----------|---------|--------------|
-| **1. Infrastructure & Audit** | Q4 2025 - Q1 2026 (30-45 days) | Secure foundational trust | $15k | Smart contract audit, Arbitrum deployment, public subgraph, API, 2–3 protocol integrations |
-| **2. Privacy & Governance** | Q1-Q2 2026 (60-90 days) | Secure neutrality and scalability | $20k | ZK threshold proofs, 3-of-5 multisig upgrade, dispute resolution, enhanced schemas |
-| **3. Ecosystem Growth** | Q2-Q3 2026 (90-120 days) | Achieve adoption and validation | $10k | Developer SDK, 5+ integrations, DAO module, analytics dashboard |
+### Phase 1: Infrastructure & Audit (Q4 2025 - Q1 2026)
+**Duration:** 30-45 days  
+**Funding Goal:** $15k
+
+**Deliverables:**
+- ✅ Smart contract security audit
+- ✅ Arbitrum mainnet deployment
+- ✅ Public subgraph (The Graph)
+- ✅ Production API with 99.9% uptime SLA
+- ✅ **DIA Lumina integration research** *(NEW)*
+- ✅ 2-3 pilot protocol integrations
+
+**Key Milestone:** Foundation secured, partnership established
+
+---
+
+### Phase 2: Decentralization via DIA Lumina (Q1-Q2 2026)
+**Duration:** 60-90 days  
+**Funding Goal:** $8k 
+
+**Deliverables:**
+- ✅ **Deploy VPNL Feeder Nodes on DIA Lasernet**
+- ✅ **Integrate DIA's zkTLS infrastructure for exchange verification**
+- ✅ **Enable permissionless reputation verification**
+- ✅ **Cross-chain reputation delivery via DIA Spectra**
+- ✅ Enhanced verification schemas (CEX + DEX)
+- ✅ Community dispute resolution mechanism
+
+**Key Milestone:** Full decentralization achieved, centralization risk eliminated
+
+---
+
+### Phase 3: Ecosystem Growth (Q2-Q3 2026)
+**Duration:** 90-120 days  
+**Funding Goal:** $10k
+
+**Deliverables:**
+- ✅ Developer SDK (TypeScript, Python)
+- ✅ Comprehensive documentation
+- ✅ 7-10+ protocol integrations
+- ✅ DAO governance module
+- ✅ Public analytics dashboard
+- ✅ Community-run feeder nodes
+
+**Success Metrics:**
+- 100+ verified solvers
+- Real-world validation of 45% efficiency hypothesis
+- 10+ active protocol integrations
+- SDK downloads: 1000+
+- Zero security incidents
 
 ---
 
@@ -130,8 +218,12 @@ The Open Intents Framework (OIF) faces an impossible trilemma without reputation
 ```
 vpnl/
 ├── contracts/          # Solidity smart contracts
-│   ├── VPNLRegistry.sol
+│   ├── VPNLRegistry.sol (Arbitrum)
+│   ├── VPNLReputationAggregator.sol (Lasernet - Phase 2)
 │   └── interfaces/
+├── feeders/            # DIA Lumina feeder integration (Phase 2)
+│   ├── reputation-feeder/
+│   └── config/
 ├── schemas/            # W3C VC schemas
 │   ├── solver-reputation.json
 │   └── verification-proof.json
@@ -142,6 +234,7 @@ vpnl/
 │   └── src/
 ├── docs/               # Documentation
 │   ├── architecture.md
+│   ├── dia-lumina-integration.md (NEW)
 │   ├── integration-guide.md
 │   └── api-reference.md
 └── examples/           # Integration examples
@@ -157,12 +250,14 @@ vpnl/
 - Smart contract (`VPNLRegistry.sol`) - functional and testable
 - W3C VC schemas - defined and documented
 - Architecture documentation - comprehensive specs
+- DIA Lumina integration research - active partnership
 
 **🚧 In Development (Phase 1 - $15k funding goal):**
 - TypeScript SDK for easy integration
 - The Graph subgraph for fast queries
 - REST API for developer access
 - Production deployment on Arbitrum
+- DIA Lumina feeder node prototype
 
 ---
 
@@ -208,6 +303,26 @@ contract YourProtocol {
 }
 ```
 
+**Phase 2: Query via DIA Lumina (Coming Q1-Q2 2026)**
+
+```solidity
+import "@diadata-org/contracts/DIAOracleV2.sol";
+
+contract YourProtocol {
+    DIAOracleV2 public diaOracle;
+    
+    function getReputationScore(address solver) 
+        public view returns (uint256) 
+    {
+        (uint256 score, uint256 timestamp) = 
+            diaOracle.getValue(
+                string(abi.encodePacked("VPNL/", solver))
+            );
+        return score;
+    }
+}
+```
+
 **After Phase 1 funding, the SDK will simplify this to:**
 
 ```typescript
@@ -216,7 +331,8 @@ import { VPNLClient } from '@vpnl/sdk';
 
 const vpnl = new VPNLClient({
   network: 'arbitrum',
-  registryAddress: '0x...'
+  registryAddress: '0x...',
+  diaOracleEnabled: true // Phase 2+
 });
 
 const reputation = await vpnl.getReputation(solverAddress);
@@ -236,6 +352,8 @@ const collateral = reputation.score >= 0.80
 3. **Submit for Review** - Cryptographic commitment created
 4. **Receive Credential** - W3C Verifiable Credential issued to your wallet
 5. **Present to Protocols** - Use credential for reduced collateral requirements
+
+**Phase 2+:** Verification becomes fully permissionless via DIA Lumina feeder nodes
 
 **Want early access?** Join our [Telegram community](https://t.me/vpnlnetwork) to be notified when verification opens.
 
@@ -268,9 +386,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
 
 **Smart Contracts**
 
-* Chain: Arbitrum (EVM-compatible L2)
+* Chain: Arbitrum (primary) + DIA Lasernet (Phase 2+)
 * Language: Solidity 0.8.x
-* Standards: EAS attestations, W3C VCs
+* Standards: EAS attestations, W3C VCs, DIA Oracle integration
 
 **Verification Schemas**
 
@@ -282,6 +400,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution guidelines.
 * Endpoint: `api.vpnl.network`
 * Methods: `GET /reputation/{address}`, `POST /verify`
 * Auth: Public read, authenticated write
+
+**DIA Integration** *(Phase 2 deliverable)*
+* Feeder Nodes: Modified DIA decentral-feeder
+* Storage: DIA Lasernet (Arbitrum Orbit L2)
+* Cross-chain: DIA Spectra (140+ chains)
 
 ---
 
@@ -298,12 +421,14 @@ Reputation infrastructure is too critical to be:
 * ✅ Open standards (anyone can implement)
 * ✅ Open source (MIT license)
 * ✅ Open access (no fees, no gatekeeping)
+* ✅ Decentralized verification (via DIA Lumina)
 
 ---
 
 ## Current Status
 
 ✅ Prototype architecture complete  
+✅ DIA Lumina partnership established  
 🎯 Seeking funding: [Giveth GG24](https://giveth.io/project/vpnl:-the-verifiable-performance-network-layer)  
 🚧 Next milestone: Security audit + mainnet deployment (Q4 2025 - Q1 2026)
 
@@ -339,19 +464,16 @@ See `CONTRIBUTING.md` for detailed guidelines.
 * 📚 Documentation: `docs.vpnl.io` *(coming soon)*
 * 💬 Telegram: [t.me/vpnlnetwork](https://t.me/vpnlnetwork)
 * 📄 Whitepaper: [docs/whitepaper.md](docs/whitepaper.md)
-
----
-
-## License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+* 🔗 DIA Lumina: [diadata.org/lumina](https://www.diadata.org/lumina/)
 
 ---
 
 ## Acknowledgments
 
-Built for the **Open Intents Framework** ecosystem:
+**Infrastructure Partners:**
+* [DIA (Decentralized Information Asset)](https://www.diadata.org/) - Trustless oracle infrastructure
 
+**Built for the Open Intents Framework ecosystem:**
 * [Ethereum Foundation](https://ethereum.foundation)
 * [Hyperlane](https://hyperlane.xyz)
 * [LI.FI](https://li.fi)
@@ -362,5 +484,12 @@ Built for the **Open Intents Framework** ecosystem:
 
 ---
 
+## License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
 **VPNL:** Open standards for solver reputation.  
-Enabling permissionless intent routing at scale.
+Enabling permissionless intent routing at scale.  
+Powered by DIA Lumina's trustless oracle infrastructure.
