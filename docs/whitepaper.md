@@ -540,7 +540,7 @@ VPNL follows a three-phase governance evolution ensuring credible neutrality whi
 
 ## 6. Roadmap and Success Metrics
 
-### Phase 1: Foundation & Audit (Q1 2025 | $15k | 30-45 days)
+### Phase 1: Foundation & Audit (Q4 2025)
 
 **Deliverables:**
 
@@ -557,7 +557,7 @@ VPNL follows a three-phase governance evolution ensuring credible neutrality whi
 - Measurable collateral reduction for verified solvers
 - <100ms API response time (p95)
 
-### Phase 2: Privacy & Governance (Q2-Q3 2025 | $20k | 60-90 days)
+### Phase 2: Privacy & Governance (Q1-Q2 2026)
 
 **Deliverables:**
 
@@ -574,7 +574,7 @@ VPNL follows a three-phase governance evolution ensuring credible neutrality whi
 - 5+ protocol integrations (total)
 - Dispute resolution avg <7 days
 
-### Phase 3: Ecosystem Validation (Q4 2025 - Q1 2026 | $10k | 90-120 days)
+### Phase 3: Ecosystem Validation (Q3-Q4 2026)
 
 **Deliverables:**
 
@@ -592,7 +592,7 @@ VPNL follows a three-phase governance evolution ensuring credible neutrality whi
 - SDK downloads: 1000+
 - Zero security incidents
 
-### Phase 4: Decentralization & Scale (2026+)
+### Phase 4: Decentralization & Scale (2027+)
 
 **Future Directions:**
 
