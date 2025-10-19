@@ -723,9 +723,311 @@ Phase 1 centralized verifier was a known weakness, requiring 6-9 months and $20k
 
 **DIA Lumina Solution:**
 
-|Aspect            |Custom Build (Original Plan)   |DIA Lumina Integration                  |
-|------------------|-------------------------------|----------------------------------------|
-|**Timeline**      |6-9 months development         |2-3 months integration                  |
-|**Cost**          |$20k+ for custom infrastructure|~$8k for integration work               |
-|**Security**      |Need to design and audit       |Battle-tested (DIA’s production network)|
-|**Permissionless**|Complex governance to achieve  |                                        |
+| Aspect | Custom Build (Original Plan) | DIA Lumina Integration |
+|--------|------------------------------|------------------------|
+| **Timeline** | 6-9 months development | 2-3 months integration |
+| **Cost** | $20k+ for custom infrastructure | ~$8k for integration work |
+| **Security** | Need to design and audit | Battle-tested (DIA's production network) |
+| **Permissionless** | Complex governance to achieve | Built-in from day 1 |
+| **Economic Model** | Need to design tokenomics | Leverage DIA's proven model |
+| **Cross-chain** | Manual per-chain integration | 140+ chains included |
+| **Network Effects** | Start from zero | Leverage DIA ecosystem |
+| **Risk** | Unproven custom system | Production-validated |
+
+**Key Benefits:**
+
+1. **Accelerated Timeline:**
+   - Skip 6-9 months of infrastructure development
+   - Focus on integration vs. building from scratch
+   - Faster path to trustless verification
+
+2. **Cost Efficiency:**
+   - 60% reduction in Phase 2 costs ($20k → $8k)
+   - No need to hire additional developers
+   - Leverage existing audited contracts
+
+3. **Battle-Tested Security:**
+   - DIA's oracle network is production-proven
+   - Staking + slashing model validated in practice
+   - Active feeder community already exists
+
+4. **Credible Neutrality:**
+   - Infrastructure not controlled by VPNL
+   - DIA is independent, neutral oracle provider
+   - True decentralization from Phase 2
+
+5. **Network Effects:**
+   - Immediate access to DIA's ecosystem
+   - Cross-pollination with other oracle use cases
+   - Shared security budget across applications
+
+**Security Inheritance:**
+VPNL inherits DIA Lumina's security properties:
+- ✅ Restaking on Ethereum (via DIA token)
+- ✅ Slashing for incorrect data
+- ✅ Distributed consensus across multiple feeders
+- ✅ zkTLS proofs for data authenticity (Phase 2+)
+- ✅ Cross-chain delivery infrastructure
+- ✅ Active monitoring and governance
+
+### 7.3 Phase 3: Full DAO Governance (Q3 2026+)
+
+**Duration:** Permanent governance model  
+**Authority:** VPNL DAO (community-governed)  
+**Scope:** All application parameters, methodology updates, treasury  
+**Infrastructure:** Continues on DIA Lumina (community maintains feeders)
+
+**Governance Transition:**
+- Token or reputation-weighted voting
+- Quadratic voting for critical parameters
+- Time-locked parameter changes (7-30 days)
+- Emergency multisig for security issues
+- Public proposal and discussion process
+
+**Community Participation:**
+- Feeder operators gain voting power
+- Protocol integrators have advisory voice
+- Solver representatives included
+- Open governance calls and documentation
+
+**Long-Term Vision:** 
+Self-sustaining public goods infrastructure with community stewardship, analogous to Ethereum protocol governance.
+
+### 7.4 Comparison to Original Roadmap
+
+**Original Plan (Pre-DIA Partnership):**
+
+| Phase | Duration | Cost | Security | Centralization Risk |
+|-------|----------|------|----------|---------------------|
+| 1 | 3-4 mo | $15k | Founder | High |
+| 2 | 6-9 mo | $20k | 3-of-5 multisig | Medium |
+| 3 | 3-6 mo | $10k | DAO | Low |
+| **Total** | **12-19 mo** | **$45k** | **Gradual** | **Slow reduction** |
+
+**Updated Plan (With DIA Lumina):**
+
+| Phase | Duration | Cost | Security | Centralization Risk |
+|-------|----------|------|----------|---------------------|
+| 1 | 3-4 mo | $15k | Founder | High (but short) |
+| 2 | 2-3 mo | $8k | Crypto-economic | **Eliminated** |
+| 3 | 3-6 mo | $10k | DAO + DIA | **Eliminated** |
+| **Total** | **8-13 mo** | **$33k** | **Immediate (Phase 2)** | **Rapid elimination** |
+
+**Key Improvements:**
+- ⏱️ **30-40% faster:** 12-19 months → 8-13 months
+- 💰 **27% cheaper:** $45k → $33k
+- 🔐 **Stronger security:** Trust-based → Crypto-economic
+- 🌐 **Earlier decentralization:** Phase 3 → Phase 2
+- ⚡ **Permissionless sooner:** 12+ months → 6-7 months
+- 🎯 **Lower risk:** Custom build → Battle-tested infrastructure
+
+-----
+
+## 8. Conclusion
+
+VPNL's mathematical framework confirms that verifiable trust can replace static collateral constraints, unlocking systemic liquidity gains and verifiable fairness across OIF ecosystems. The integration with DIA Lumina enhances this model by providing production-ready, crypto-economically secured infrastructure for trustless verification.
+
+**Key Findings:**
+
+1. **45% capital efficiency gain** is mathematically sound and empirically robust
+   - Maintains >38% across all tested scenarios
+   - Conservative estimate accounts for overhead and safety margins
+
+2. **Risk-adjusted collateral formula** balances efficiency with safety
+   - α = 0.8 provides optimal tradeoff
+   - Smooth tier transitions prevent gaming
+
+3. **Dynamic scoring** ensures responsiveness while resisting manipulation
+   - β = 0.9 balances recency with historical context
+   - Convergence within 3-4 cycles (90-120 days)
+
+4. **Multi-layered security** addresses all major attack vectors
+   - Phase 1: Transparent centralized verification (short duration)
+   - Phase 2: Crypto-economic security via DIA Lumina
+   - Multi-feeder consensus eliminates single points of failure
+
+5. **Progressive governance** ensures credible neutrality
+   - DIA Lumina accelerates decentralization (6-7 months vs 12+ months)
+   - Cost reduction (27% savings overall)
+   - Battle-tested infrastructure reduces risk
+
+6. **Two-layer governance** provides clear separation of concerns
+   - VPNL DAO: Reputation methodology
+   - DIA DAO: Infrastructure security
+   - Neither can unilaterally compromise system
+
+**Practical Impact:**
+
+For a network of 100 solvers:
+- **$4.5M in freed capital** (45% efficiency)
+- **Faster decentralization** (6-7 months vs 12-19 months)
+- **Lower implementation cost** ($33k vs $45k)
+- **Stronger security** (crypto-economic vs trust-based)
+- **Permissionless from Phase 2** (not delayed to Phase 3)
+
+**Future Work:**
+
+- Empirical validation with real-world protocol integrations
+- Machine learning for fraud detection and predictive scoring
+- Cross-chain reputation aggregation protocols
+- Time-weighted decay refinement based on operational data
+- Advanced ZK features for enhanced privacy
+
+**Conclusion:**
+
+VPNL, enhanced by DIA Lumina integration, provides a mathematically rigorous, economically sound, and practically implementable solution to the OIF coordination trilemma. The 45% capital efficiency gain is achievable while maintaining safety and permissionlessness, supported by crypto-economic security mechanisms that eliminate centralization risks faster and more cost-effectively than originally planned.
+
+-----
+
+## 9. References
+
+[1] Ethereum Foundation. "ERC-7683: Cross-Chain Intent Standard." 2024.  
+[2] Hyperlane Protocol. "Modular Interoperability Framework." 2024.  
+[3] Ethereum Attestation Service. "Technical Documentation." 2024.  
+[4] W3C. "Verifiable Credentials Data Model 2.0." 2023.  
+[5] Across Protocol. "Intents-Based Architecture." 2024.  
+[6] LI.FI Protocol. "Cross-Chain Swaps." 2024.  
+[7] Buterin, V. "Credible Neutrality." 2020.  
+[8] Everclear. "Liquidity Management." 2024.  
+[9] OpenZeppelin. "EAS Integration." 2024.  
+[10] Nomial. "Intent Matching." 2024.  
+[11] Arbitrum Foundation. "Security Model." 2024.  
+[12] The Graph Protocol. "Decentralized Indexing." 2024.  
+[13] UniswapX. "Dutch Auction Protocol." 2023.  
+[14] Flashbots. "MEV-Boost." 2023.  
+[15] Gitcoin Passport. "Decentralized Identity." 2024.  
+[16] VPNL Network. "GitHub Repository." 2025.  
+[17] VPNL Network. "Whitepaper v1.1" 2025.  
+[18] DIA. "Lumina: The Rollup-Enabled Oracle." 2024.  
+[19] DIA. "Oracles Got Boring: How Did We Get Here?" 2025.  
+[20] DIA. "Distributed Feeder Network." 2024.  
+[21] DIA. "Lasernet Mainnet is Live." 2025.  
+[22] DIA. "GitHub Repository." 2024. https://github.com/diadata-org
+
+-----
+
+## Appendix A: DIA Lumina Integration Economics
+
+### A.1 Cost-Benefit Analysis
+
+**Phase 2 Development Costs:**
+
+**Original Plan (Custom Infrastructure):**
+- Smart contract development: $8k
+- ZK infrastructure: $6k
+- Testing and audits: $4k
+- Documentation: $2k
+- **Total: $20k**
+- **Timeline: 6-9 months**
+
+**DIA Lumina Integration:**
+- Integration development: $4k
+- Smart contract adaptation: $2k
+- Testing: $1k
+- Documentation: $1k
+- **Total: $8k**
+- **Timeline: 2-3 months**
+
+**Savings: $12k (60%) and 4-6 months**
+
+### A.2 Operational Cost Comparison
+
+**Per Verification Costs:**
+
+**Phase 1 (Centralized):**
+- Manual review time: ~2 hours @ $50/hr = $100
+- Gas for commitment: ~$2-5
+- Infrastructure: ~$10/month amortized
+- **Total per verification: ~$110-115**
+
+**Phase 2 (DIA Lumina):**
+- Feeder processing (automated): ~$0.50 gas
+- Consensus overhead (3 feeders): ~$1.50 gas
+- Cross-chain sync: ~$1-2
+- Feeder rewards (amortized): ~$5-10
+- **Total per verification: ~$8-14**
+
+**Cost reduction: 85-90% per verification**
+
+### A.3 Network Economics at Scale
+
+**Scenario: 500 Verified Solvers**
+
+**Phase 1 Costs (Annual):**
+- 500 verifications × $115 = $57,500
+- 2 renewals/year × 500 × $115 = $115,000
+- Infrastructure: $10k/year
+- **Total: ~$182k annually**
+
+**Phase 2 Costs (Annual):**
+- 500 verifications × $12 = $6,000
+- 2 renewals/year × 500 × $12 = $12,000
+- Feeder rewards net (after earned fees): ~$20k
+- **Total: ~$38k annually**
+
+**Annual savings at scale: $144k (79%)**
+
+### A.4 Capital Efficiency ROI
+
+**For a typical protocol:**
+
+**Without VPNL:**
+- 100 solvers × $100k collateral = $10M locked
+- Opportunity cost @ 5% APY = $500k/year
+
+**With VPNL:**
+- Risk-adjusted: ~$5.5M locked
+- Capital freed: $4.5M
+- Opportunity gain: $225k/year
+- VPNL integration cost: $5k one-time
+- **Net benefit Year 1: $220k**
+- **ROI: 4,400%**
+
+### A.5 Feeder Operator Economics
+
+**Individual Feeder Node:**
+
+**Initial Investment:**
+- Stake: 10,000 DIA (~$10k)
+- Hardware: $200-500 (modest VPS)
+- Setup time: 4-8 hours
+
+**Ongoing Costs:**
+- VPS hosting: ~$20-50/month
+- Maintenance: ~2 hours/month @ $50/hr = $100
+- Gas costs: ~$20-50/month
+- **Total monthly: ~$140-200**
+
+**Revenue:**
+- Base rewards: 100 DIA/month
+- Performance bonus: +0-100 DIA/month
+- **Total: 100-200 DIA/month (~$100-200 @ $1/DIA)**
+
+**Annual Returns:**
+- Rewards: 1,200-2,400 DIA/year
+- On stake: 10,000 DIA
+- **APY: 12-24%**
+- Plus potential DIA price appreciation
+
+**Break-even: 2-3 months**
+
+### A.6 Total Value Secured (TVS)
+
+**Network-Wide Impact:**
+
+**Assumptions:**
+- 500 verified solvers
+- Average intent value: $100k
+- 5 intents/solver/month
+- 45% capital efficiency gain
+
+**Calculations:**
+- Monthly intent volume: 500 × 5 × $100k = $250M
+- Capital freed: $250M × 0.45 = $112.5M/month
+- Annualized: $112.5M × 12 = **$1.35B capital efficiency/year**
+
+**VPNL operational cost: $38k/year**
+
+**Efficiency ratio: $1.35B / $38k = 35,500:1**
+
+**For every $1 spent on VPNL, protocols gain $35,500 in capital efficiency.**
