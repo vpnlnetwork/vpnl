@@ -1,0 +1,11 @@
+{
+  "network": "localhost",
+  "chainId": 31337,
+  "registry": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "verifier": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "deployer": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+  "deploymentTx": "0x31c1ec8fcf2bb6c4e59a5957f4cd607e39215a7b0d8d15e054cd0d961c7e69e0",
+  "blockNumber": 1,
+  "timestamp": "2025-10-21T20:54:25.708Z",
+  "explorerUrl": "https://arbiscan.io/address/0x5FbDB2315678afecb367f032d93F642f64180aa3"
+}
