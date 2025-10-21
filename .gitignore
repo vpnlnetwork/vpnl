@@ -36,6 +36,9 @@ yarn-error.log*
 coverage/
 .nyc_output/
 
+# TypeChain
+typechain-types/
+
 # Temporary files
 tmp/
 temp/

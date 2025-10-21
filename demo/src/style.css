@@ -1,0 +1,266 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #213547;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  min-width: 320px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 0 0 10px 0;
+  color: #667eea;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 0 30px 0;
+  font-size: 1.1em;
+}
+
+.info-box {
+  background: #f8f9fa;
+  border-left: 4px solid #667eea;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #667eea;
+}
+
+.registry-info {
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 25px 0;
+}
+
+.registry-info h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+  word-break: break-all;
+}
+
+.actions {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-weight: 600;
+}
+
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.primary-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary-btn {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.secondary-btn:hover {
+  background: #45a049;
+}
+
+.solvers-section {
+  margin: 30px 0;
+}
+
+.solvers-section h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#solversList {
+  display: grid;
+  gap: 15px;
+}
+
+.solver-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.solver-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.solver-card.verified {
+  border-color: #4CAF50;
+  background: #f1f8f4;
+}
+
+.solver-card.unverified {
+  border-color: #ff9800;
+  background: #fff8f1;
+}
+
+.solver-card h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.solver-details {
+  display: grid;
+  gap: 8px;
+  font-size: 0.95em;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  display: inline-block;
+  margin: 8px 0;
+}
+
+.status.verified {
+  background: #4CAF50;
+  color: white;
+}
+
+.status.unverified {
+  background: #ff9800;
+  color: white;
+}
+
+.custom-query {
+  margin: 30px 0;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.custom-query h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+#customAddress {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Monaco', 'Courier New', monospace;
+  box-sizing: border-box;
+}
+
+#customAddress:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+#queryResult {
+  margin-top: 20px;
+}
+
+.query-result {
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.query-result.verified {
+  background: #f1f8f4;
+  border: 2px solid #4CAF50;
+}
+
+.query-result.unverified {
+  background: #fff8f1;
+  border: 2px solid #ff9800;
+}
+
+.loading {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  font-style: italic;
+}
+
+.error {
+  color: #f44336;
+  padding: 15px;
+  background: #ffebee;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+.hint {
+  color: #666;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,433 @@
+# VPNL Deployment Setup Guide
+
+## Prerequisites
+
+Before deploying, ensure you have:
+
+- Node.js v18+ installed
+- A wallet with Arbitrum Sepolia ETH (testnet)
+- Etherscan API key (V2)
+- Git installed
+
+-----
+
+## Step 1: Environment Setup
+
+### 1.1 Install Dependencies
+
+```bash
+# Clone the repository (if not already done)
+git clone https://github.com/vpnlnetwork/vpnl.git
+cd vpnl
+
+# Install dependencies
+npm install
+```
+
+### 1.2 Get Testnet ETH
+
+You’ll need ~0.1 ETH on Arbitrum Sepolia for deployment:
+
+**Faucet Options:**
+
+- QuickNode: https://faucet.quicknode.com/arbitrum/sepolia
+- Alchemy: https://www.alchemy.com/faucets/arbitrum-sepolia
+- Chainlink: https://faucets.chain.link/arbitrum-sepolia
+
+**Steps:**
+
+1. Connect your MetaMask wallet
+1. Request testnet ETH
+1. Wait for transaction confirmation (~1-2 minutes)
+
+### 1.3 Get Your Private Key
+
+**From MetaMask:**
+
+1. Click your account icon → Account Details
+1. Click “Show private key”
+1. Enter your password
+1. Copy the private key (64 characters, no 0x prefix)
+
+⚠️ **SECURITY WARNING:**
+
+- Never share your private key
+- Never commit your `.env` file to Git
+- Use a separate testnet-only wallet
+
+### 1.4 Get Etherscan API Key
+
+**If you already have one:**
+
+- Your existing Etherscan API key works for Arbiscan
+- Arbiscan uses the Etherscan V2 API
+
+**If you need a new one:**
+
+1. Go to: https://docs.etherscan.io/getting-started/creating-an-account
+1. Sign up for a free account
+1. Navigate to: API Keys → Add
+1. Name it “VPNL Deployment”
+1. Copy the API key
+
+### 1.5 Create `.env` File
+
+```bash
+# Copy the example file
+cp .env.example .env
+
+# Edit with your values
+nano .env  # or use any text editor
+```
+
+**Your `.env` should look like:**
+
+```bash
+# Network RPC URLs (default is fine)
+ARBITRUM_SEPOLIA_RPC_URL=https://sepolia-rollup.arbitrum.io/rpc
+
+# Your wallet's private key (NO 0x prefix!)
+PRIVATE_KEY=abcd1234ef567890abcd1234ef567890abcd1234ef567890abcd1234ef567890
+
+# Your Etherscan API key
+ETHERSCAN_API_KEY=ABC123DEF456GHI789JKL
+```
+
+### 1.6 Verify Setup
+
+```bash
+# Compile contracts (should succeed without errors)
+npx hardhat compile
+
+# Run tests (optional but recommended)
+npx hardhat test
+```
+
+**Expected output:**
+
+```
+Compiled 1 Solidity file successfully
+```
+
+-----
+
+## Step 2: Deploy to Testnet
+
+### 2.1 Deploy Contract
+
+```bash
+npm run deploy:sepolia
+```
+
+**Expected output:**
+
+```
+🚀 Deploying VPNLRegistry to arbitrumSepolia...
+==========================================
+
+📋 Deployment Configuration:
+  Deployer address: 0xYourAddress...
+  Account balance: 0.05 ETH
+  Network: arbitrumSepolia
+  Chain ID: 421614
+
+📦 Deploying VPNLRegistry contract...
+✅ VPNLRegistry deployed successfully!
+
+📍 Contract Details:
+  Registry address: 0xABCD1234...
+  Verifier address: 0xYourAddress...
+  Deployment tx: 0x1234abcd...
+
+⏳ Waiting for 5 block confirmations before verification...
+✅ Confirmations complete!
+
+🔍 Verifying contract on block explorer...
+✅ Contract verified successfully!
+
+🔗 Explorer Links:
+  Contract: https://sepolia.arbiscan.io/address/0xABCD1234...
+
+✨ Deployment complete!
+```
+
+**Save these addresses!** You’ll need them for the next steps.
+
+### 2.2 Verify Deployment Manually (if auto-verification failed)
+
+```bash
+# Replace with your actual addresses
+npx hardhat verify --network arbitrumSepolia \
+  0xYOUR_REGISTRY_ADDRESS \
+  0xYOUR_VERIFIER_ADDRESS
+```
+
+### 2.3 Check Deployment Files
+
+```bash
+# View deployment info
+cat deployments/arbitrumSepolia.json
+```
+
+**You should see:**
+
+```json
+{
+  "network": "arbitrumSepolia",
+  "chainId": 421614,
+  "registry": "0xABCD1234...",
+  "verifier": "0xYourAddress...",
+  "deployer": "0xYourAddress...",
+  "explorerUrl": "https://sepolia.arbiscan.io/address/0xABCD1234..."
+}
+```
+
+-----
+
+## Step 3: Create Test Data
+
+### 3.1 Populate Mock Verifications
+
+```bash
+npm run populate:testdata
+```
+
+**Expected output:**
+
+```
+🧪 Creating test data on arbitrumSepolia...
+==========================================
+
+📋 Configuration:
+  Network: arbitrumSepolia
+  Registry: 0xABCD1234...
+
+🔨 Creating verifications for mock solvers...
+
+Processing: Expert Solver Alpha
+  Address: 0x742d35Cc...
+  Score: 0.85 (Expert)
+  Commitment: 0x9a3f2b1c...
+  Transaction: 0xdef456...
+  ✅ Verified in block 12345678
+  Gas used: 85234
+
+Processing: Advanced Solver Beta
+  [...]
+
+✨ Test data creation complete!
+
+📋 Summary:
+  Created: 4 verifications
+  Registry: 0xABCD1234...
+```
+
+### 3.2 Verify on Block Explorer
+
+1. Open the explorer URL from deployment
+1. Go to “Contract” tab → “Read Contract”
+1. Test `isVerified` with one of the mock addresses
+1. Should return `true`
+
+-----
+
+## Step 4: Update Documentation
+
+### 4.1 Update DEMO.md
+
+Replace placeholder addresses with your deployed addresses:
+
+```bash
+# Open DEMO.md in editor
+nano DEMO.md  # or your preferred editor
+```
+
+**Update these lines:**
+
+```markdown
+## Deployed Contracts
+
+### Arbitrum Sepolia
+- **VPNLRegistry:** `0xYOUR_ACTUAL_ADDRESS`
+- **Arbiscan:** https://sepolia.arbiscan.io/address/0xYOUR_ACTUAL_ADDRESS
+```
+
+Also update the test solver addresses from `deployments/arbitrumSepolia-testdata.json`
+
+### 4.2 Update README.md
+
+Add the testnet demo section:
+
+```markdown
+## 🎯 Live Testnet Demo
+
+**Try it now:** VPNL on Arbitrum Sepolia
+
+- **Contract:** [0xYOUR_ADDRESS](https://sepolia.arbiscan.io/address/0xYOUR_ADDRESS)
+- **Deployment:** See [DEMO.md](DEMO.md) for details
+- **Test Solvers:** 4 pre-verified addresses available
+```
+
+-----
+
+## Step 5: Frontend Demo (Optional)
+
+If you want to build the React demo:
+
+### 5.1 Create React App
+
+```bash
+# In a separate directory
+npx create-react-app vpnl-demo
+cd vpnl-demo
+npm install ethers@^6
+```
+
+### 5.2 Update Configuration
+
+In your `App.js`, update:
+
+```javascript
+const REGISTRY_ADDRESS = "0xYOUR_DEPLOYED_ADDRESS";
+```
+
+And update the mock solver addresses from your `deployments/arbitrumSepolia-testdata.json`
+
+### 5.3 Deploy Frontend
+
+**Option A: Vercel (Recommended)**
+
+```bash
+npm install -g vercel
+vercel login
+vercel --prod
+```
+
+**Option B: GitHub Pages**
+
+```bash
+npm run build
+# Push to GitHub and enable Pages
+```
+
+-----
+
+## Troubleshooting
+
+### “Insufficient balance for deployment”
+
+- Check your wallet has testnet ETH: https://sepolia.arbiscan.io/address/YOUR_ADDRESS
+- Get more from faucets listed above
+- Need at least ~0.05 ETH for deployment + gas
+
+### “Only verifier can call”
+
+- You’re using a different wallet than the one that deployed
+- The deployer is automatically set as verifier
+- Use the same wallet that ran `deploy:sepolia`
+
+### “Contract already verified”
+
+- This is fine! It means verification succeeded
+- You can skip the manual verification step
+
+### “Network error” or “timeout”
+
+- RPC endpoint might be down
+- Try alternative RPC in `.env`:
+  
+  ```bash
+  ARBITRUM_SEPOLIA_RPC_URL=https://arb-sepolia.g.alchemy.com/v2/YOUR-ALCHEMY-KEY
+  ```
+- Get Alchemy key: https://www.alchemy.com/
+
+### “ETHERSCAN_API_KEY is invalid”
+
+- Verify your API key is correct
+- Check for extra spaces in `.env`
+- Wait a few minutes (new keys take time to activate)
+- Get a new key: https://docs.etherscan.io/
+
+-----
+
+## Next Steps
+
+After successful deployment:
+
+1. ✅ **Record a demo video** (Loom)
+- Show Arbiscan verified contract
+- Query test solvers
+- Explain architecture
+1. ✅ **Create screenshots**
+- Arbiscan contract page
+- Successful verification transactions
+- Contract read functions
+1. ✅ **Update appeal letter**
+- Add contract addresses
+- Include explorer links
+- Add video link
+1. ✅ **Share with community**
+- Tweet deployment
+- Post in Discord/Telegram
+- Update Giveth project page
+
+-----
+
+## Quick Reference
+
+### Useful Commands
+
+```bash
+# Compile contracts
+npx hardhat compile
+
+# Run tests
+npx hardhat test
+
+# Deploy to testnet
+npm run deploy:sepolia
+
+# Create test data
+npm run populate:testdata
+
+# Verify manually
+npx hardhat verify --network arbitrumSepolia <ADDRESS> <VERIFIER>
+
+# Check deployment info
+cat deployments/arbitrumSepolia.json
+```
+
+### Important Links
+
+- **Arbitrum Sepolia Explorer:** https://sepolia.arbiscan.io
+- **Faucet:** https://faucet.quicknode.com/arbitrum/sepolia
+- **Etherscan API Docs:** https://docs.etherscan.io/
+- **Hardhat Docs:** https://hardhat.org/docs
+
+-----
+
+## Security Checklist
+
+Before committing any code:
+
+- [ ] `.env` file is in `.gitignore`
+- [ ] No private keys in any files
+- [ ] No API keys hardcoded
+- [ ] `.env.example` has placeholder values only
+- [ ] Deployment JSON files don’t contain secrets
+
+-----
+
+## Support
+
+If you encounter issues:
+
+1. Check the troubleshooting section above
+1. Review Hardhat error messages carefully
+1. Verify your `.env` configuration
+1. Check testnet block explorer for transaction details
+1. Ask in VPNL Telegram: https://t.me/vpnlnetwork
+
+-----
+
+**Ready to deploy?** Start with Step 1! 🚀
