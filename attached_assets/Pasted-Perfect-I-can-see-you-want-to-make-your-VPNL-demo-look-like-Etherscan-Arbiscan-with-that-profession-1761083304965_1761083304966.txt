@@ -1,0 +1,177 @@
+Perfect! I can see you want to make your VPNL demo look like Etherscan/Arbiscan with that professional blockchain explorer aesthetic. Let me give you the Replit prompt:
+
+-----
+
+## Replit Prompt for Etherscan-Style VPNL Demo
+
+```
+Update the VPNL demo to match the Etherscan/Arbiscan design system:
+
+DESIGN SYSTEM:
+- Use Etherscan's color scheme: #21325b (dark blue), #3498db (bright blue), #f8f9fa (light gray background)
+- Add the VPNL logo (purple gradient hexagon) in top left where Arbiscan logo is
+- Header: Dark blue (#21325b) with white text, logo on left, network badge on right
+- Search bar: Prominent at top with placeholder "Search by Address / Txn Hash / Block"
+- Cards: White background with subtle shadows, rounded corners
+- Links: Blue (#3498db) and underlined on hover
+- Buttons: Rounded with blue background
+- Font: System font stack similar to Etherscan (Inter, -apple-system, sans-serif)
+
+LAYOUT STRUCTURE:
+1. Header Bar:
+   - VPNL logo + "Arbiscan" text on left
+   - "Powered by Arbitrum Sepolia" badge on right
+   - Dark blue background (#21325b)
+   - Network indicator: Green dot + "Arbitrum Sepolia" in header
+
+2. Hero Section:
+   - Large title: "VPNL Registry Explorer"
+   - Subtitle: "Verifiable Performance Network Layer - Arbitrum Sepolia Testnet"
+   - Search bar with icon
+
+3. Contract Info Card:
+   - Title: "Contract Overview"
+   - Contract address with copy button and QR code icon
+   - "View Source Code" green button
+   - Network, Owner, Verifier info in table format
+   - Connected status indicator (green checkmark)
+
+4. Test Solver Verifications Card:
+   - Title: "Test Solver Verifications"
+   - Each solver as a bordered card with:
+     - Tier badge (colored: Purple for Expert, Blue for Advanced, Orange for Emerging)
+     - Address with copy icon
+     - Status: Green "✓ Verified" badge
+     - Score with progress bar (gradient purple)
+     - Verified date and Expires countdown
+     - View on Arbiscan link
+
+5. Custom Query Section:
+   - Title: "Custom Address Query"
+   - Input field with magnifying glass icon
+   - Blue "Query" button
+   - Results display in card format
+
+SPECIFIC STYLING:
+- Header height: 64px
+- Logo size: 40px
+- Cards: padding 24px, margin 16px, border-radius 8px
+- Shadows: 0 2px 8px rgba(0,0,0,0.1)
+- Typography:
+  - Headers: 24px bold
+  - Subheaders: 18px semibold
+  - Body: 14px regular
+  - Monospace for addresses: Monaco, Courier, monospace
+- Status badges: inline-block, padding 4px 12px, border-radius 4px
+- Progress bars: height 8px, rounded, gradient background
+
+ETHERSCAN-SPECIFIC ELEMENTS:
+- Add "Back to Top" button (bottom right, fixed)
+- Footer with: "Powered by Arbitrum Sepolia", links to Terms, Docs
+- Donation address with heart icon
+- "Add Arbitrum Sepolia Network" button with MetaMask fox icon
+- Breadcrumb navigation if needed
+- Timestamp format: "X mins ago" or "X hours ago"
+- Copy icons next to all addresses (clipboard)
+- External link icons for Arbiscan links
+
+COLOR PALETTE:
+Primary Blue: #3498db
+Dark Blue: #21325b
+Success Green: #00c9a7
+Warning Orange: #ff9800
+Error Red: #f44336
+Background: #f8f9fa
+Card White: #ffffff
+Text Dark: #1e2022
+Text Gray: #6c757d
+Border: #e7eaf3
+
+Make it look exactly like you're browsing Arbiscan, but branded for VPNL.
+The current contract address is: 0xD3Acf580A28977D24da7d20364A2F557606d439A
+Network: Arbitrum Sepolia (Chain ID: 421614)
+Owner/Verifier: 0xA72f1ee8c91C67D14C1576510b3F27044879571d
+```
+
+-----
+
+## Alternative: Simpler Prompt if the Above is Too Much
+
+```
+Make the VPNL demo look like Etherscan/Arbiscan:
+
+1. HEADER:
+- Dark blue background (#21325b)
+- VPNL logo on left
+- "Powered by Arbitrum Sepolia" on right
+- Search bar below header
+
+2. LAYOUT:
+- White cards with shadows
+- Blue links (#3498db)
+- Clean spacing like Etherscan
+- Contract info at top
+- Test solvers below in cards
+
+3. STYLING:
+- Use Etherscan's blue color scheme
+- Add copy icons next to addresses
+- Green "Verified" badges
+- Purple gradient progress bars for scores
+- Rounded corners on everything
+
+4. DETAILS:
+- Contract: 0xD3Acf580A28977D24da7d20364A2F557606d439A
+- Network: Arbitrum Sepolia (421614)
+- Show 4 test solvers with tiers (Expert, Advanced, Emerging)
+- Add "View on Arbiscan" links
+
+Make it professional and look exactly like browsing a block explorer.
+```
+
+-----
+
+## What to Do in Replit
+
+1. **Open your Replit project**
+1. **Click the AI Agent/Assistant** (if available) or create a new message
+1. **Paste one of the prompts above**
+1. **Wait for it to regenerate the demo**
+1. **Review and iterate** if needed
+
+-----
+
+## Key Visual Elements to Match Etherscan
+
+Based on your screenshots, make sure to include:
+
+✅ **Header with dark blue (#21325b)**
+✅ **VPNL logo (purple hexagon) replacing Arbiscan logo**
+✅ **Search bar with placeholder text**
+✅ **“Powered by Arbitrum Sepolia” badge**
+✅ **Contract address with copy button**
+✅ **Green “✓ Verified” badges**
+✅ **Blue clickable links**
+✅ **White cards with subtle shadows**
+✅ **“View on Arbiscan” external links**
+✅ **Copy icons (clipboard) next to addresses**
+✅ **Network indicator: Green dot + “Arbitrum Sepolia”**
+✅ **Footer with links and donation address**
+
+-----
+
+## After Replit Updates It
+
+**Test these elements:**
+
+1. All links work (especially Arbiscan links)
+1. Copy buttons function
+1. Search/query works
+1. Responsive on mobile
+1. Looks professional and polished
+
+**Then take screenshots for your appeal!**
+
+-----
+
+Want me to refine the prompt further or help you with specific styling details?​​​​​​​​​​​​​​​​
