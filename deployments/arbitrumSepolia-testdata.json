@@ -1,0 +1,47 @@
+{
+  "network": "arbitrumSepolia",
+  "registry": "0xD3Acf580A28977D24da7d20364A2F557606d439A",
+  "createdAt": "2025-10-21T21:05:30.139Z",
+  "solvers": [
+    {
+      "solver": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "name": "Expert Solver Alpha",
+      "tier": "Expert",
+      "score": 0.85,
+      "commitment": "0xedb20e8b9aa85ec01b83f2a55ca80102c102ecb411176f4f7351a0b6db0a31e4",
+      "transactionHash": "0x37aa85e9677400129c71754e782a01850e3874ac2c614f2c5425fd6b5fdce928",
+      "blockNumber": 207069112,
+      "expiresAt": "2026-04-19T21:05:23.000Z"
+    },
+    {
+      "solver": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "name": "Advanced Solver Beta",
+      "tier": "Advanced",
+      "score": 0.65,
+      "commitment": "0x46b4b99f542a1c4efa20b8fd147a62f3d15920a36d3724d6fa70c8bc6c64f21b",
+      "transactionHash": "0xc029c360121efcf1210927f624cac3be1c03de5068de4a3b90975d86b4c7dfdc",
+      "blockNumber": 207069119,
+      "expiresAt": "2026-04-19T21:05:24.000Z"
+    },
+    {
+      "solver": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "name": "Emerging Solver Gamma",
+      "tier": "Emerging",
+      "score": 0.3,
+      "commitment": "0x35d931c8f1a9b4a32be32574654230ca4148775d3456f9fa9ba7a3537492cbf1",
+      "transactionHash": "0xec44189772c05c5d801cad188413c72de62ea050e06bea46df0c9cf39575b6f4",
+      "blockNumber": 207069126,
+      "expiresAt": "2026-04-19T21:05:26.000Z"
+    },
+    {
+      "solver": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "name": "Expert Solver Delta",
+      "tier": "Expert",
+      "score": 0.92,
+      "commitment": "0xc15b36aba5456e77be028d7800b48f0511ea94578fb71eae040f280695b45414",
+      "transactionHash": "0xb30eb783edd83f841f4023aa4cc282252cf5ff5fd9fc776d5c0f2944e6737cfe",
+      "blockNumber": 207069132,
+      "expiresAt": "2026-04-19T21:05:28.000Z"
+    }
+  ]
+}

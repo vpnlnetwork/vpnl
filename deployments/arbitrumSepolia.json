@@ -1,0 +1,11 @@
+{
+  "network": "arbitrumSepolia",
+  "chainId": 421614,
+  "registry": "0xD3Acf580A28977D24da7d20364A2F557606d439A",
+  "verifier": "0xA72f18834007D788cdc8069C3AB2FBa5ec9571ee",
+  "deployer": "0xA72f18834007D788cdc8069C3AB2FBa5ec9571ee",
+  "deploymentTx": "0x846064ede707f17e4048fadf5ae8cc9ed9c543a24f67d02c7a66acc94a92df7d",
+  "blockNumber": 207068697,
+  "timestamp": "2025-10-21T21:03:40.089Z",
+  "explorerUrl": "https://sepolia.arbiscan.io/address/0xD3Acf580A28977D24da7d20364A2F557606d439A"
+}

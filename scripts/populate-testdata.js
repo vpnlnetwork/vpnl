@@ -37,28 +37,28 @@ async function main() {
 
   const mockSolvers = [
     {
-      address: "0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb1",
+      address: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
       name: "Expert Solver Alpha",
       score: 0.85,
       tier: "Expert",
       specialties: ["cross-chain", "high-volume"]
     },
     {
-      address: "0x5c6B0f7Bf3E7ce046039Bd8FABdfD3f9F5021678",
+      address: "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
       name: "Advanced Solver Beta",
       score: 0.65,
       tier: "Advanced",
       specialties: ["low-latency"]
     },
     {
-      address: "0x03C6FcED478cde53Abb47b5dC3Bb8B3c1f2A0C2F",
+      address: "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
       name: "Emerging Solver Gamma",
       score: 0.30,
       tier: "Emerging",
       specialties: []
     },
     {
-      address: "0x1234567890AbcdEF1234567890aBcdef12345678",
+      address: "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
       name: "Expert Solver Delta",
       score: 0.92,
       tier: "Expert",
