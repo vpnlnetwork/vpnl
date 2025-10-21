@@ -17,10 +17,6 @@ author = "agent"
 task = "workflow.run"
 args = "Demo Frontend"
 
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Hardhat Node"
-
 [[workflows.workflow]]
 name = "Demo Frontend"
 author = "agent"
@@ -32,17 +28,6 @@ waitForPort = 5000
 
 [workflows.workflow.metadata]
 outputType = "webview"
-
-[[workflows.workflow]]
-name = "Hardhat Node"
-author = "agent"
-
-[workflows.workflow.metadata]
-outputType = "console"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "npx hardhat node"
 
 [[ports]]
 localPort = 5000
