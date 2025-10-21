@@ -33,11 +33,12 @@ body {
   flex-direction: column;
 }
 
-/* Search Header */
+/* Search Header - Etherscan Style */
 .search-header {
   background: white;
   border-bottom: 1px solid var(--etherscan-border);
   padding: 12px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
 .search-header-container {
@@ -54,11 +55,13 @@ body {
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.2s;
+  background: #fafbfc;
 }
 
 .search-input-header:focus {
   outline: none;
   border-color: var(--etherscan-primary);
+  background: white;
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
@@ -139,7 +142,7 @@ body {
   color: var(--etherscan-primary);
 }
 
-/* Tabs */
+/* Tabs - Etherscan Style */
 .tabs {
   display: flex;
   gap: 0;
@@ -177,13 +180,13 @@ body {
   flex: 1;
 }
 
-/* Cards */
+/* Cards - Etherscan Style with Shadow */
 .card {
   background: white;
   border-radius: 8px;
   padding: 24px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
   border: 1px solid var(--etherscan-border);
 }
 
@@ -289,6 +292,7 @@ body {
   color: var(--etherscan-primary);
 }
 
+/* Status Badges - Etherscan Style */
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -355,36 +359,42 @@ body {
   font-size: 14px;
   transition: all 0.2s;
   font-family: 'Monaco', 'Courier New', monospace;
+  background: #fafbfc;
 }
 
 .search-input:focus {
   outline: none;
   border-color: var(--etherscan-primary);
+  background: white;
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
-/* Solver Cards */
+/* Solver Cards - Etherscan Transaction Card Style */
 .solver-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 16px;
+  gap: 0;
 }
 
 .solver-card {
   background: white;
-  border: 1px solid var(--etherscan-border);
-  border-radius: 8px;
-  padding: 20px;
+  border-bottom: 1px solid var(--etherscan-border);
+  padding: 20px 0;
   transition: all 0.2s;
 }
 
+.solver-card:first-child {
+  border-top: 1px solid var(--etherscan-border);
+}
+
 .solver-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-  transform: translateY(-2px);
+  background: #fafbfc;
 }
 
 .solver-card.verified {
   border-left: 4px solid var(--etherscan-success);
+  padding-left: 16px;
+  margin-left: -20px;
+  padding-right: 16px;
 }
 
 .solver-header {
@@ -398,36 +408,42 @@ body {
   font-size: 16px;
   font-weight: 600;
   color: var(--etherscan-text);
-  margin: 0;
+  margin: 0 0 6px 0;
 }
 
+/* Tier Badges - Like Etherscan's Method Badges */
 .tier-badge {
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 4px;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border: 1px solid;
 }
 
 .tier-badge.expert {
-  background: #e9d5ff;
+  background: #f3f1ff;
   color: #7c3aed;
+  border-color: #e9d5ff;
 }
 
 .tier-badge.advanced {
-  background: #dbeafe;
+  background: #eff6ff;
   color: #2563eb;
+  border-color: #dbeafe;
 }
 
 .tier-badge.emerging {
-  background: #fed7aa;
+  background: #fff7ed;
   color: #ea580c;
+  border-color: #fed7aa;
 }
 
 .solver-details {
   display: grid;
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
 }
 
 .detail-item {
@@ -439,24 +455,30 @@ body {
 
 .detail-label {
   color: var(--etherscan-text-gray);
+  font-weight: 500;
 }
 
 .detail-value {
   color: var(--etherscan-text);
-  font-weight: 500;
+  font-weight: 600;
 }
 
+/* Score Container - Etherscan Style */
 .score-container {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  padding: 12px;
+  background: #fafbfc;
+  border-radius: 6px;
+  border: 1px solid var(--etherscan-border);
 }
 
 .score-bar {
   flex: 1;
-  height: 8px;
+  height: 10px;
   background: #e7eaf3;
-  border-radius: 4px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -464,13 +486,15 @@ body {
   height: 100%;
   background: linear-gradient(90deg, var(--etherscan-primary), #7c3aed);
   transition: width 0.3s ease;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
 }
 
 .score-text {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--etherscan-primary);
-  min-width: 40px;
+  min-width: 45px;
   text-align: right;
+  font-size: 14px;
 }
 
 .arbiscan-link {
@@ -494,6 +518,16 @@ body {
   gap: 6px;
 }
 
+/* Address Display - Etherscan Style */
+.solver-address {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--etherscan-text-gray);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 /* Buttons */
 .primary-btn {
   background: var(--etherscan-primary);
@@ -513,6 +547,7 @@ body {
 .primary-btn:hover:not(:disabled) {
   background: #2980b9;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
 .primary-btn:disabled {
@@ -525,7 +560,7 @@ body {
   margin: 24px 0;
 }
 
-/* Loading */
+/* Loading - Etherscan Style */
 .loading {
   text-align: center;
   padding: 40px 20px;
@@ -618,7 +653,7 @@ body {
     gap: 4px;
   }
   
-  .solver-grid {
+  .solver-details {
     grid-template-columns: 1fr;
   }
   
