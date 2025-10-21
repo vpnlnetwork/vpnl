@@ -9,6 +9,19 @@
 
 ---
 
+## 🎯 Live Testnet Demo
+
+**Try it now:** [VPNL Demo on Arbitrum Sepolia](https://e6162db1-34bf-4ac3-8737-d269bcf54999-00-1reolrpr7gf4l.riker.replit.dev)
+
+Explore the deployed registry contract with a professional block explorer interface:
+- View verified solver reputations
+- Query any address for verification status
+- See reputation scores and tiers in action
+
+**Contract:** [View on Arbiscan](https://sepolia.arbiscan.io/address/0xD3Acf580A28977D24da7d20364A2F557606d439A)
+
+---
+
 ## Overview
 
 **VPNL** provides open data schemas that enable **risk-adjusted routing** for intent-based protocols.  
