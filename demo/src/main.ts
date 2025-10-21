@@ -25,102 +25,149 @@ const TEST_SOLVERS = [
 ]
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div class="header">
-    <div class="header-container">
-      <div class="logo-section">
-        <img src="/vpnl-logo.png" alt="VPNL" class="logo-image" />
-        <span class="logo-text">VPNL Registry Explorer</span>
-      </div>
-      <div class="network-badge">
-        <span class="status-dot"></span>
-        Arbitrum Sepolia Testnet
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="hero">
-      <h1>VPNL Registry Explorer</h1>
-      <p class="subtitle">Verifiable Performance Network Layer - Arbitrum Sepolia Testnet</p>
-      <div class="search-container">
+  <div class="page-wrapper">
+    <div class="search-header">
+      <div class="search-header-container">
         <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"></circle>
           <path d="m21 21-4.35-4.35"></path>
         </svg>
         <input 
           type="text" 
-          class="search-input" 
+          class="search-input-header" 
           id="searchInput"
           placeholder="Search by Address / Txn Hash / Block"
         />
       </div>
     </div>
 
-    <div class="card" id="contractCard">
-      <div class="card-header">
-        <h2>Contract Overview</h2>
-        <a href="${NETWORK_CONFIG.explorer}/address/${REGISTRY_ADDRESS}#code" target="_blank" class="view-source-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"></polyline>
+    <div class="header">
+      <div class="header-container">
+        <div class="logo-section">
+          <img src="/vpnl-logo.png" alt="VPNL" class="logo-image" />
+        </div>
+        <button class="menu-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
           </svg>
-          View Source Code
-        </a>
-      </div>
-      <div id="contractInfo">
-        <div class="loading">
-          <div class="spinner"></div>
-          Loading contract information...
-        </div>
+        </button>
       </div>
     </div>
 
-    <div class="btn-center">
-      <button id="connectBtn" class="primary-btn">
-        Connect to Registry
-      </button>
-    </div>
-
-    <div id="solversSection" style="display: none;">
-      <div class="card">
-        <div class="card-header">
-          <h2>Test Solver Verifications</h2>
-        </div>
-        <div id="solversList" class="solver-grid"></div>
-      </div>
-    </div>
-
-    <div id="customQuerySection" style="display: none;">
-      <div class="card">
-        <div class="card-header">
-          <h2>Custom Address Query</h2>
-        </div>
-        <div class="search-container">
-          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
+    <div class="container">
+      <div class="contract-header">
+        <div class="contract-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
           </svg>
-          <input 
-            type="text" 
-            class="search-input" 
-            id="customAddress" 
-            placeholder="Enter solver address (0x...)"
-          />
         </div>
-        <div class="btn-center">
-          <button id="queryBtn" class="primary-btn">Query Address</button>
+        <div class="contract-info-header">
+          <h1>Contract</h1>
+          <div class="contract-address-display">
+            ${REGISTRY_ADDRESS}
+            <button class="copy-btn-inline" onclick="navigator.clipboard.writeText('${REGISTRY_ADDRESS}')" title="Copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+            <button class="qr-btn" title="QR Code">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+            </button>
+          </div>
         </div>
-        <div id="queryResult"></div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active">Overview</button>
+        <button class="tab">Verifications</button>
+        <button class="tab">Custom Query</button>
+      </div>
+
+      <div class="btn-center" id="connectSection">
+        <button id="connectBtn" class="primary-btn">
+          Connect to Registry
+        </button>
+      </div>
+
+      <div id="overviewSection" style="display: none;">
+        <div class="card">
+          <div class="card-header-simple">
+            <h2>Contract Information</h2>
+            <a href="${NETWORK_CONFIG.explorer}/address/${REGISTRY_ADDRESS}#code" target="_blank" class="view-source-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              View Source Code
+            </a>
+          </div>
+          <div id="contractInfo">
+            <div class="loading">
+              <div class="spinner"></div>
+              Loading contract information...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="solversSection" style="display: none;">
+        <div class="card">
+          <div class="card-header-simple">
+            <h2>Test Solver Verifications</h2>
+          </div>
+          <div id="solversList" class="solver-grid"></div>
+        </div>
+      </div>
+
+      <div id="customQuerySection" style="display: none;">
+        <div class="card">
+          <div class="card-header-simple">
+            <h2>Custom Address Query</h2>
+          </div>
+          <div class="search-container">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+            <input 
+              type="text" 
+              class="search-input" 
+              id="customAddress" 
+              placeholder="Enter solver address (0x...)"
+            />
+          </div>
+          <div class="btn-center">
+            <button id="queryBtn" class="primary-btn">Query Address</button>
+          </div>
+          <div id="queryResult"></div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="footer">
-    <div class="footer-links">
-      <a href="https://vpnl.io" target="_blank">About VPNL</a>
-      <a href="${NETWORK_CONFIG.explorer}" target="_blank">Arbiscan Explorer</a>
-      <a href="https://t.me/vpnlnetwork" target="_blank">Community</a>
+    <div class="footer">
+      <div class="footer-powered">
+        <img src="/arbitrum-logo.svg" alt="Arbitrum" class="arbitrum-logo" onerror="this.style.display='none'" />
+        <span>Powered by Arbitrum Sepolia</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://vpnl.io" target="_blank">About VPNL</a>
+        <span class="separator">|</span>
+        <a href="${NETWORK_CONFIG.explorer}" target="_blank">Arbiscan</a>
+        <span class="separator">|</span>
+        <a href="https://t.me/vpnlnetwork" target="_blank">Community</a>
+      </div>
+      <div class="footer-copyright">
+        VPNL Registry © 2025 | Contract: ${shortenAddress(REGISTRY_ADDRESS)}
+      </div>
     </div>
-    <div>Powered by Arbitrum Sepolia Testnet | Contract: ${REGISTRY_ADDRESS}</div>
   </div>
 `
 
@@ -129,7 +176,9 @@ let registry: ethers.Contract | null = null
 
 async function connectToRegistry() {
   const connectBtn = document.getElementById('connectBtn') as HTMLButtonElement
+  const connectSection = document.getElementById('connectSection')!
   const contractInfo = document.getElementById('contractInfo')!
+  const overviewSection = document.getElementById('overviewSection')!
   const solversSection = document.getElementById('solversSection')!
   const customQuerySection = document.getElementById('customQuerySection')!
   
@@ -163,7 +212,13 @@ async function connectToRegistry() {
         </div>
         <div class="info-row">
           <div class="info-label">Network</div>
-          <div class="info-value">${NETWORK_CONFIG.name} (Chain ${network.chainId})</div>
+          <div class="info-value">
+            <span class="network-badge-small">
+              <span class="status-dot"></span>
+              ${NETWORK_CONFIG.name}
+            </span>
+            (Chain ${network.chainId})
+          </div>
         </div>
         <div class="info-row">
           <div class="info-label">Owner</div>
@@ -193,21 +248,11 @@ async function connectToRegistry() {
             </span>
           </div>
         </div>
-        <div class="info-row">
-          <div class="info-label">Connection Status</div>
-          <div class="info-value">
-            <span class="status-badge connected">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Connected
-            </span>
-          </div>
-        </div>
       </div>
     `
     
-    connectBtn.style.display = 'none'
+    connectSection.style.display = 'none'
+    overviewSection.style.display = 'block'
     solversSection.style.display = 'block'
     customQuerySection.style.display = 'block'
     
