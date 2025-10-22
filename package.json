@@ -41,8 +41,10 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.67.0",
     "@openzeppelin/contracts": "^5.0.1",
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.6.1",
     "ethers": "^6.9.2"
-  }
+  },
+  "type": "module"
 }
