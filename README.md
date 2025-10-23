@@ -86,35 +86,18 @@ Without open, portable performance data, the Open Intents Framework (OIF) hits a
   *Conservative real-world estimate adjusts to ~45% accounting for overhead and safety buffers.*
 
 ---
-How VPNL Evaluates Solvers
+### 🔹 How VPNL Evaluates Solvers
 
-VPNL tracks solver performance across verifiable, on-chain metrics to
-ensure transparent reputation scoring.
-```
-  ------------------------------------------------------------------------
-  **Metric**        **What It Measures**           **Data Source**
-  ----------------- ------------------------------ -----------------------
-  **Execution       How often a solver fulfills    On-chain transaction
-  Success Rate**    intents correctly and on time  logs
+VPNL tracks solver performance across verifiable, on-chain metrics to ensure transparent reputation scoring.
 
-  **Capital         Ratio of filled vs. reserved   Smart contract event
-  Efficiency**      capital, indicating optimal    data
-                    fund usage                     
+| **Metric** | **What It Measures** | **Data Source** |
+|-------------|----------------------|-----------------|
+| **Execution Success Rate** | How often a solver fulfills intents correctly and on time | On-chain transaction logs |
+| **Capital Efficiency** | Ratio of filled vs. reserved capital, indicating optimal fund usage | Smart contract event data |
+| **Latency** | Average time between intent broadcast and solver execution | Timestamp differentials across blocks |
+| **Slippage / Price Quality** | Whether the solver provided the best available rate | DIA price feeds and DEX APIs |
+| **Reputation Continuity** | Consistency of behavior and reliability across multiple epochs | VPNLRegistry commitment proofs |
 
-  **Latency**       Average time between intent    Timestamp differentials
-                    broadcast and solver execution across blocks
-
-  **Slippage /      Whether the solver provided    DIA price feeds and DEX
-  Price Quality**   the best available rate        APIs
-
-  **Reputation      Consistency of behavior and    VPNLRegistry commitment
-  Continuity**      reliability across multiple    proofs
-                    epochs                         
-  ------------------------------------------------------------------------
-
----
----
-```
 
 ## Architecture
 
