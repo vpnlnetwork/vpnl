@@ -97,39 +97,19 @@ VPNL tracks solver performance across verifiable, on-chain metrics to ensure tra
 | **Latency** | Average time between intent broadcast and solver execution | Timestamp differentials across blocks |
 | **Slippage / Price Quality** | Whether the solver provided the best available rate | DIA price feeds and DEX APIs |
 | **Reputation Continuity** | Consistency of behavior and reliability across multiple epochs | VPNLRegistry commitment proofs |
+---
 
+## Data Flow Architecture
 
-## Architecture
-
-### Three-Layer Design
-
-```
-┌─────────────────────────────────────────────────┐
-│ Layer 1: Off-Chain Verification                 │
-│ - Connect exchange APIs (CEX/DEX)               │
-│ - Verify historical PnL                         │
-│ - Generate cryptographic commitment             │
-│   commitment = H(score || salt || metadata)     │
-└─────────────────────────────────────────────────┘
-↓
-┌─────────────────────────────────────────────────┐
-│ Layer 2: On-Chain Registry (Arbitrum)           │
-│ - Store commitment hash (zero PII)              │
-│ - Track verification status & revocations       │
-│                                                 │
-│ DIA Lasernet (Phase 2)                          │
-│ - Permissionless feeder nodes                   │
-│ - Staking/slashing + zkTLS                      │
-│ - Cross-chain delivery (Spectra)                │
-└─────────────────────────────────────────────────┘
-↓
-┌─────────────────────────────────────────────────┐
-│ Layer 3: Portable Credentials                    │
-│ - Issue W3C Verifiable Credentials               │
-│ - Solver holds in wallet                         │
-│ - Present to any protocol                        │
-│ - Optional oracle read on 140+ chains            │
-└─────────────────────────────────────────────────┘
+```mermaid
+graph TD
+  U["User Intent (Swap / Bridge / Trade)"] --> S["Solvers (compete to execute)"]
+  S --> F["VPNL Feeders<br/>Collect metrics + zkTLS verify"]
+  F --> R["VPNLRegistry (Arbitrum)<br/>Commitment hashes"]
+  R --> L["DIA Lasernet<br/>Multi-feeder consensus"]
+  L --> X["DIA Spectra<br/>Cross-chain delivery (140+)"]
+  X --> P["Intent Protocols<br/>Query: score, timestamp"]
+  P --> Q["Risk-adjusted routing / Dynamic collateral"]
 ```
 
 ---
