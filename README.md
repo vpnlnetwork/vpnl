@@ -90,7 +90,7 @@ How VPNL Evaluates Solvers
 
 VPNL tracks solver performance across verifiable, on-chain metrics to
 ensure transparent reputation scoring.
-
+```
   ------------------------------------------------------------------------
   **Metric**        **What It Measures**           **Data Source**
   ----------------- ------------------------------ -----------------------
@@ -114,6 +114,7 @@ ensure transparent reputation scoring.
 
 ---
 ---
+```
 
 ## Architecture
 
