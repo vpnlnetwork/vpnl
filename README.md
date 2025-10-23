@@ -1,6 +1,6 @@
 # VPNL: The Verifiable Performance Network Layer
 
-### 🛡️ Open Reputation Standards for the Open Intents Framework
+### Open Reputation Standards for the Open Intents Framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Built for Ethereum](https://img.shields.io/badge/Built%20for-Ethereum-3C3C3D.svg)]()
@@ -9,7 +9,7 @@
 
 ---
 
-## 🧱 Deployed Addresses
+## Deployed Address
 
 | Network | Contract | Address | Explorer | Date |
 |----------|-----------|--------|----------|------|
@@ -20,7 +20,7 @@
 
 ---
 
-## 🎯 Live Testnet Demo
+## Live Testnet Demo
 
 **Try it now:** [VPNL Demo on Arbitrum Sepolia](https://e6162db1-34bf-4ac3-8737-d269bcf54999-00-1reolrpr7gf4l.riker.replit.dev)
 
