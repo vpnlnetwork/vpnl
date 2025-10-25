@@ -1,6 +1,121 @@
-# VPNL: The Verifiable Performance Network Layer
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vpnlnetwork/vpnl/main/demo/public/vpnl-logo.png" width="140" alt="VPNL logo">
+</p>
 
-### Open Reputation Standards for the Open Intents Framework
+<h2 align="center">VPNL: The Verifiable Performance Network Layer</h2>
+
+<p align="center">
+  <em>Open reputation standards for provable performance across on-chain systems.</em><br>
+</p>
+
+---
+
+## 🧭 Overview
+
+**VPNL** is an open-source protocol for **verifiable performance and reputation proofs**.  
+It enables traders, solvers, and liquidity providers to demonstrate their track records through cryptographically verifiable, privacy-preserving credentials.
+
+VPNL serves as the **reputation and performance layer for the Open Intents Framework (OIF)** — and any protocol needing trustless, cross-chain reputation data.
+
+---
+
+## ⚙️ Architecture
+
+| Layer | Description |
+|-------|--------------|
+| **Registry Contracts** | On-chain verification registry (Ethereum / Arbitrum Sepolia) |
+| **Schema Definitions** | JSON-based performance and reputation formats |
+| **Oracle Integration** | Data ingestion + DIA Lumina oracle feeds |
+| **SDK + Scripts** | Developer tools for deployment and testing |
+| **Test Data** | Sample solver and trader performance records |
+
+**Goal:**  
+Create a modular, composable infrastructure for measuring *verifiable performance* — and making it portable across DeFi, AI, and coordination systems.
+
+---
+
+## 🚀 Quickstart
+
+### 1. Install Dependencies
+```bash
+pnpm install
+# or
+npm install
+```
+
+### 2. Compile Contracts
+```bash
+npx hardhat compile
+```
+
+### 3. Deploy Locally
+```bash
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+### 4. Populate Example Data
+```bash
+node scripts/populate-testdata.js
+```
+
+### 5. Run Tests
+```bash
+npx hardhat test
+```
+
+---
+
+## 🧩 Project Structure
+
+```
+vpnl/
+├── contracts/               # Core smart contracts
+│   └── VPNLRegistry.sol
+├── deployments/             # Network deployment records
+├── schemas/                 # JSON schema for performance + reputation
+├── scripts/                 # Deployment + verification scripts
+├── test/                    # Unit tests
+├── docs/                    # Architecture and design docs
+└── demo/                    # Frontend and assets
+```
+
+---
+
+## 🔐 Security & Licensing
+
+- **License:** [MIT](LICENSE)  
+- **Security Policy:** [SECURITY.md](SECURITY.md)  
+- **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+
+We believe transparency is the foundation of verifiable trust.  
+All code, tests, and documentation are open for public review and contribution.
+
+---
+
+## 🌐 Integrations
+
+| Partner | Purpose |
+|----------|----------|
+| **DIA Lumina** | Decentralized oracle layer for performance data (in development) |
+| **Open Intents Framework (OIF)** | Routing layer for solver reputation |
+| **Uniswap v4** | Hook-based liquidity provider verification (in progress) |
+| **HyperPNL** | Trader verification data source (prospective) |
+
+---
+
+## 💬 Community
+
+- Discussions: [GitHub Issues](https://github.com/vpnlnetwork/vpnl/issues)  
+- Twitter / Updates: [@vpnlnetwork](https://twitter.com/vpnlnetwork)  
+- Documentation: [vpnl.io](https://vpnl.io)
+
+---
+
+<p align="center">
+  <sub>Part of the Skyless open R&D ecosystem — building transparent, verifiable, and privacy-preserving trust infrastructure for the next internet.</sub>
+</p>
+
+## VPNL & the Open Intents Framework
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Built for Ethereum](https://img.shields.io/badge/Built%20for-Ethereum-3C3C3D.svg)]()
@@ -114,7 +229,7 @@ graph TD
 
 ---
 
-## Infrastructure Partnership: DIA Lumina
+## VPNL & DIA Lumina
 
 **Why DIA Lumina?**
 - 🔓 **Permissionless:** Anyone can run feeder nodes  
@@ -162,19 +277,6 @@ graph TD
 - Zero security incidents
 
 ---
-
-## Repository Structure
-
-```
-vpnl/
-├── contracts/          # VPNLRegistry.sol (Arbitrum)
-├── schemas/            # W3C VC schemas
-├── scripts/            # deploy, verify, populate, interact
-├── demo/               # Vite + TS example UI
-├── docs/               # architecture, economic proof, DIA integration, whitepaper
-├── deployments/        # per-network metadata
-└── test/               # contract tests
-```
 
 Security posture & runbook: see **[SECURITY.md](SECURITY.md)**
 
