@@ -35,7 +35,7 @@ from initial single-writer deployments to a decentralized multi-operator network
 - Governance process adopted; external PRs merging changes.
 - ≥10 feeders; ≥5 integrator protocols.
 
-## Phase 3 — Federation / DAO (Optional)
+## Phase 3 — Federation / DAO 
 
 - Tokenless or minimal-governance DAO to coordinate specs and emergencies.
 - Emergency pause mechanism with strict quorum and sunset clauses.
