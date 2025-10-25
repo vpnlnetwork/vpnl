@@ -1,0 +1,10 @@
+# Require review from the maintainers group for any change
+* @vpnlnetwork/maintainers
+
+# Contracts can also be reviewed by the solidity team
+/contracts/ @vpnlnetwork/solidity-reviewers
+
+# Docs can be reviewed by docs maintainers
+/docs/ @vpnlnetwork/docs
+/operators/ @vpnlnetwork/docs
+/governance/ @vpnlnetwork/docs
